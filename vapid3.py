@@ -717,11 +717,11 @@ def annotate_a_virus(strain, genome, metadata, coverage, sbt_loc, full_name, nuc
 
     write_tbl(strain, gene_product_list, gene_loc_list, genome, gene_of_interest, extra_stuff, name_of_virus, all_loc_list, all_product_list, full_name, name_of_the_feature_list)
 
-    cmd = 'tbl2asn -p ' + strain + SLASH + ' -t ' + sbt_loc + ' -Y ' + strain + SLASH + 'assembly.cmt -V vb '
+    cmd = 'table2asn -indir ' + strain + SLASH + ' -t ' + sbt_loc + ' -Y ' + strain + SLASH + 'assembly.cmt -V vb '
     try:
         subprocess.call(cmd, shell=True)
     except:
-        print('tbl2asn not installed, go to https://www.ncbi.nlm.nih.gov/genbank/tbl2asn2/ and download the appropriate version')
+        print('table2asn not installed, go to https://www.ncbi.nlm.nih.gov/genbank/table2asn/ and download the appropriate version')
     print('Done with: ' + strain)
     print('')
     print('')
